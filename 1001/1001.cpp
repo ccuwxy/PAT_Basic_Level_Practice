@@ -1,24 +1,20 @@
 #include<stdio.h>
-#include<stdlib.h>
+
 int main()
 {
-	int n;
 	int count = 0;
-	scanf("%d", &n);
-	while (n != 1)
-	{
-		if (n % 2 == 0)
-		{
-			n /= 2;
-			count++;
+	int N;
+	scanf("%d", &N);
+	while (N != 1) {
+		if (N % 2 == 0) {
+			N /= 2;
 		}
 		else
 		{
-			n = (3 * n + 1) / 2;
-			count++;
+			N = (3 * N + 1) / 2;
 		}
+		count++;
 	}
-	printf("%d\n", count);
-	system("pause");
+	printf("%d", count);
 	return 0;
 }
