@@ -16,7 +16,6 @@
 //输出样例：
 //6
 
-
 #include<iostream>
 #include<algorithm>
 using namespace std;
