@@ -1,33 +1,32 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include<iostream>
+using namespace std;
+
 int main()
 {
-	char n[101];
-	char pinyin[10][5] = { "ling","yi","er","san","si","wu","liu","qi","ba","jiu" };
+	string pinyin[10] = { "ling","yi","er","san","si","wu","liu","qi","ba","jiu" };
+	string N;
+
+	cin >> N;
+	int length = N.length();
 	int sum = 0;
-	scanf("%s", &n);
-	int length = strlen(n) - 1;
-	while (length >= 0)
+	while (length)
 	{
-		sum += n[length--] - '0';
+		sum += (N[--length] - '0');  //在ASCII中字符与'0'字符的差值为对应的数字
 	}
-	char shu[5];
-	int i = 0;
-	while (sum > 0)
+
+	char sumChar[3];
+	int sumIndex = 0;
+	while (sum)
 	{
-		shu[i++] = (sum % 10)+'0';
+		sumChar[sumIndex++] = sum % 10;  //存放的数字为逆序的
 		sum /= 10;
 	}
-	shu[i++] = '\0';
-	int ii = strlen(shu)-1;
-	while (ii>=0)
-	{
-		printf("%s", pinyin[shu[ii--]-'0']);
-		if (ii >= 0)
-			printf(" ");
+
+	for (int i = sumIndex - 1; i >= 0; i--) {
+		cout << pinyin[sumChar[i]];
+		if (i != 0)
+			cout << " ";
 	}
-	
-	system("pause");
+
 	return 0;
 }
