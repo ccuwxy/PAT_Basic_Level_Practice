@@ -1,20 +1,10 @@
 #include<iostream>
 using namespace std;
 
-struct game 
-{
-	char a;
-	char b;
-	bool awin = false;
-	bool bwin = false;
-};
-
 int main()
 {
 	int N;
 	cin >> N;
-	game *games = new game[N];
-
 	int a1 = 0, a2 = 0, a3 = 0, b1 = 0, b2 = 0, b3 = 0;
 	char atemp, btemp;
 	int aB = 0, aJ = 0, aC = 0;
@@ -23,8 +13,6 @@ int main()
 	{
 		cin >> atemp;
 		cin >> btemp;
-		games[i].a = atemp;
-		games[i].b = btemp;
 
 		if (atemp == btemp)
 		{
