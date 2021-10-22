@@ -28,10 +28,10 @@ using namespace std;
 int main()
 {
 	int M, N, A, B, re;
-	int* rgbs = new int[N];
+	
 
 	cin >> M >> N >> A >> B >> re;
-
+	int* rgbs = new int[N];
 	for (int i = 0; i < M; i++)
 	{
 		for (int j = 0; j < N; j++)
